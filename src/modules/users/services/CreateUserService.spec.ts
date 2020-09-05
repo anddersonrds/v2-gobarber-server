@@ -32,7 +32,7 @@ describe('CreateUser', () => {
     expect(
       createUser.execute({
         name: 'Anderson Rodrigues',
-        email: 'anddersonrds@gmail.com',
+        email: 'anddersonrds@gmail.colknklnlknm',
         password: '123456',
       }),
     ).rejects.toBeInstanceOf(AppError);
