@@ -1,8 +1,10 @@
 node_modules/
-.vscode
 coverage/
-.DS_Store
 build/
 temp/
 tmp/*
 !tmp/.gitkeep
+.env
+.vscode
+.DS_Store
+ormconfig.json
