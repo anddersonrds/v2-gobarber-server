@@ -1,17 +1,17 @@
 import { injectable, inject } from 'tsyringe';
 
 import AppError from '@shared/errors/AppError';
-import IHashProvider from '@modules/users/providers/HashProvider/models/IHashProvider';
-import IUsersRepository from '@modules/users/repositories/IUsersRepository';
+import IHashProvider from '../providers/HashProvider/models/IHashProvider';
+import IUsersRepository from '../repositories/IUsersRepository';
 
-import User from '@modules/users/infra/typeorm/entities/User';
+import User from '../infra/typeorm/entities/User';
 
 interface IRequest {
   user_id: string;
   name: string;
   email: string;
-  password?: string;
   old_password?: string;
+  password?: string;
 }
 
 @injectable()
@@ -28,8 +28,8 @@ class UpdateProfileService {
     user_id,
     name,
     email,
-    password,
     old_password,
+    password,
   }: IRequest): Promise<User> {
     const user = await this.usersRepository.findById(user_id);
 
